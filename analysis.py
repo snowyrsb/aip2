@@ -43,8 +43,8 @@ def question2c():
     """
       Prefer the distant exit (+10), risking the cliff (-10).
     """
-    answerDiscount = 0.5
-    answerNoise = 0.05
+    answerDiscount = 0.75
+    answerNoise = 0
     answerLivingReward = 0
     return answerDiscount, answerNoise, answerLivingReward
     # If not possible, return 'NOT POSSIBLE'

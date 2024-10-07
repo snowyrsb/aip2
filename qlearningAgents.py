@@ -193,7 +193,7 @@ class ApproximateQAgent(PacmanQAgent):
         """
         featureVector = self.featExtractor.getFeatures(state, action)
         qval = 0
-        for feature in featureVector.sortedKeys():
+        for feature in featureVector:
             qval += self.weights[feature] * featureVector[feature]
 
         return qval
@@ -205,7 +205,7 @@ class ApproximateQAgent(PacmanQAgent):
         """
         difference = (reward + self.discount * self.computeValueFromQValues(nextState)) - self.getQValue(state, action)
         featureVector = self.featExtractor.getFeatures(state, action)
-        for feature in featureVector.sortedKeys():
+        for feature in featureVector:
             self.weights[feature] = self.weights[feature] + self.alpha * difference * featureVector[feature]
         #util.raiseNotDefined()
 
